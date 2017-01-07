@@ -62,7 +62,7 @@ Public Class Form1
         If webbrowser1.DocumentText.Contains("1") Then
             MessageBox.Show("Diese E-Mail und/oder der Benutzername existiert bereits in unserer Datenbank!", "E-Mail/Benutzername existiert bereits", MessageBoxButtons.OK, MessageBoxIcon.Error)
         ElseIf webbrowser1.DocumentText.Contains("FINISHED") Then
-            MessageBox.Show("Benutzer erfolgreich registriert, Sie können sich nun Anmelden", "Registrierung erfolgreich", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            MessageBox.Show("Benutzer erfolgreich registriert, Sie kÃ¶nnen sich nun Anmelden", "Registrierung erfolgreich", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
     End Sub
 
@@ -79,7 +79,7 @@ Public Class Form1
             MessageBox.Show("Sie wurden erfolgreich angemeldet.")
             Form2.Show()
         Else
-            MessageBox.Show("Die von Ihnen eingegebenen Anmeldedaten sind ungültig. Bitte überprüfen Sie Ihre Eingaben!")
+            MessageBox.Show("Die von Ihnen eingegebenen Anmeldedaten sind ungÃ¼ltig. Bitte Ã¼berprÃ¼fen Sie Ihre Eingaben!")
         End If
     End Sub
 End Class
