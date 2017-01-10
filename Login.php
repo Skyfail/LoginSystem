@@ -30,7 +30,7 @@ if ($verb) {
                 die("User is not activated!");
             }
             if ($sendhwid != $hwid) {
-                die("HWID Invalid");
+                die("wronghwid");
             }
             die("success");
         }
