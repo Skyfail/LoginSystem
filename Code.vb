@@ -7,6 +7,7 @@ Public Class Form1
     Dim enteredemail As String
     Dim entereduser As String
     Dim enteredpw As String
+    Dim token As String = "1234"
 
     'HWID Getter
     Function GetHWID()
@@ -75,11 +76,16 @@ Public Class Form1
         Do While webbrowser1.ReadyState <> WebBrowserReadyState.Complete
             Application.DoEvents()
         Loop
-        If webbrowser1.DocumentText.Contains("success") Then
-            MessageBox.Show("Sie wurden erfolgreich angemeldet.")
+        If webbrowser1.DocumentText.Contains("wronghwid") Then
+            MsgBox("This PC is not authorized, Account banned.", MsgBoxStyle.Critical, "AntiPiracy")
+            webbrowser1.Navigate("http://yourdomain.net/ban.php?user=" & entereduser & "&token=" & token)
+        End If
+        
+         If webbrowser1.DocumentText.Contains("success") Then
+            MessageBox.Show("Successfully logged in.")
             Form2.Show()
         Else
-            MessageBox.Show("Die von Ihnen eingegebenen Anmeldedaten sind ungültig. Bitte überprüfen Sie Ihre Eingaben!")
+            MessageBox.Show("The entered login details are invalid, please try again!")
         End If
     End Sub
 End Class
