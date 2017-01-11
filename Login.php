@@ -30,6 +30,7 @@ if ($verb) {
                 die("User is not activated!");
             }
             if ($sendhwid != $hwid) {
+				mysql_query("UPDATE test SET aktiv='false' WHERE username='$user'");
                 die("wronghwid");
             }
             die("success");
